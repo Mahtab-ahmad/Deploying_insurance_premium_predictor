@@ -37,7 +37,7 @@ if st.button('Predict Premium Category'):
         'occupation':occupation
     }
     try:
-        response = requests.post('http://127.0.0.1:8000/predict',json=input_data)
+        response = requests.post('https://insurance-premium-predictor-api.onrender.com/predict',json=input_data)
 
         if response.status_code == 200:
             prediction = response.json().get('predicted_category')
